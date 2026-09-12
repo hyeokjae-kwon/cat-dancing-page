@@ -1,0 +1,86 @@
+import './DancingCat.css'
+
+function DancingCat({ isPlaying }) {
+  return (
+    <div className={`cat-stage${isPlaying ? ' is-dancing' : ''}`}>
+      <span className="music-note note-1" aria-hidden="true">
+        ♪
+      </span>
+      <span className="music-note note-2" aria-hidden="true">
+        ♫
+      </span>
+      <span className="music-note note-3" aria-hidden="true">
+        ♬
+      </span>
+
+      <svg
+        className="cat-svg"
+        viewBox="0 0 300 300"
+        role="img"
+        aria-label={isPlaying ? '춤추는 고양이' : '멈춰있는 고양이'}
+      >
+        <g id="cat-tail">
+          <path
+            d="M 205 210 C 250 205 265 160 250 120 C 240 95 215 90 210 110 C 206 126 222 132 230 122 C 236 145 225 175 195 182 Z"
+            fill="#f4a340"
+            stroke="#c97a1f"
+            strokeWidth="3"
+          />
+        </g>
+
+        <g id="cat-body">
+          <ellipse cx="150" cy="205" rx="70" ry="58" fill="#f4a340" stroke="#c97a1f" strokeWidth="3" />
+          <ellipse cx="150" cy="222" rx="42" ry="34" fill="#fff2df" />
+
+          <path d="M108 168 L96 150 M115 160 L108 138" stroke="#c97a1f" strokeWidth="6" strokeLinecap="round" />
+          <path d="M192 168 L204 150 M185 160 L192 138" stroke="#c97a1f" strokeWidth="6" strokeLinecap="round" />
+
+          <g id="cat-left-paw">
+            <ellipse cx="118" cy="252" rx="18" ry="14" fill="#f4a340" stroke="#c97a1f" strokeWidth="3" />
+          </g>
+          <g id="cat-right-paw">
+            <ellipse cx="182" cy="252" rx="18" ry="14" fill="#f4a340" stroke="#c97a1f" strokeWidth="3" />
+          </g>
+        </g>
+
+        <g id="cat-head">
+          <path d="M108 90 L96 48 L138 78 Z" fill="#f4a340" stroke="#c97a1f" strokeWidth="3" strokeLinejoin="round" />
+          <path d="M114 82 L106 58 L130 76 Z" fill="#ffc9de" />
+
+          <path d="M192 90 L204 48 L162 78 Z" fill="#f4a340" stroke="#c97a1f" strokeWidth="3" strokeLinejoin="round" />
+          <path d="M186 82 L194 58 L170 76 Z" fill="#ffc9de" />
+
+          <circle cx="150" cy="118" r="62" fill="#f4a340" stroke="#c97a1f" strokeWidth="3" />
+
+          <path d="M100 108 Q150 150 200 108 Q195 165 150 172 Q105 165 100 108 Z" fill="#fff2df" />
+
+          <path d="M100 112 Q80 100 62 108" stroke="#c97a1f" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M100 120 Q78 120 58 124" stroke="#c97a1f" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M200 112 Q220 100 238 108" stroke="#c97a1f" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M200 120 Q222 120 242 124" stroke="#c97a1f" strokeWidth="2" fill="none" strokeLinecap="round" />
+
+          <g id="cat-eyes">
+            <ellipse cx="123" cy="112" rx="9" ry="12" fill="#2b2b2b" />
+            <ellipse cx="177" cy="112" rx="9" ry="12" fill="#2b2b2b" />
+            <circle cx="126" cy="107" r="3" fill="#fff" />
+            <circle cx="180" cy="107" r="3" fill="#fff" />
+          </g>
+
+          <path d="M144 132 L156 132 L150 140 Z" fill="#ff8fab" />
+          <path
+            d="M150 140 Q150 146 150 146 M150 146 Q140 152 132 148 M150 146 Q160 152 168 148"
+            stroke="#c97a1f"
+            strokeWidth="2.5"
+            fill="none"
+            strokeLinecap="round"
+          />
+
+          <ellipse cx="105" cy="132" rx="10" ry="6" fill="#ffb6c9" opacity="0.7" />
+          <ellipse cx="195" cy="132" rx="10" ry="6" fill="#ffb6c9" opacity="0.7" />
+        </g>
+      </svg>
+    </div>
+  )
+}
+
+export default DancingCat

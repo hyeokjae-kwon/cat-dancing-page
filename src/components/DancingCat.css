@@ -1,0 +1,45 @@
+.cat-stage {
+  position: relative;
+  width: min(70vw, 320px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.cat-svg {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.cat-stage .music-note {
+  top: 10%;
+}
+
+.cat-stage .note-1 {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.cat-stage .note-2 {
+  left: 46%;
+  animation-delay: 0.4s;
+  font-size: 1.1rem;
+}
+
+.cat-stage .note-3 {
+  left: 78%;
+  animation-delay: 0.8s;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .cat-stage {
+    width: min(75vw, 260px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cat-stage {
+    width: min(80vw, 220px);
+  }
+}

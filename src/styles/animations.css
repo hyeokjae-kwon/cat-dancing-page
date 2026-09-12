@@ -1,0 +1,136 @@
+/* 고양이 댄싱 애니메이션 keyframes - transform 기반, GPU 가속 */
+
+@keyframes cat-jump {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  25% {
+    transform: translateY(-18px) scale(1.03, 0.97);
+  }
+  50% {
+    transform: translateY(0) scale(0.97, 1.03);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.02, 0.98);
+  }
+}
+
+@keyframes cat-body-sway {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(-6deg) translateY(-2px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0);
+  }
+  75% {
+    transform: rotate(6deg) translateY(-2px);
+  }
+}
+
+@keyframes cat-head-bob {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0) scale(1);
+  }
+  25% {
+    transform: rotate(8deg) translateY(-3px) scale(1.02);
+  }
+  50% {
+    transform: rotate(0deg) translateY(1px) scale(1);
+  }
+  75% {
+    transform: rotate(-8deg) translateY(-3px) scale(1.02);
+  }
+}
+
+@keyframes cat-tail-wag {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes cat-paw-tap {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-8deg);
+  }
+}
+
+@keyframes note-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.cat-stage.is-dancing .cat-svg {
+  animation: cat-jump 1.1s ease-in-out infinite;
+}
+
+.cat-stage.is-dancing #cat-body {
+  transform-origin: 150px 250px;
+  animation: cat-body-sway 1.1s ease-in-out infinite;
+}
+
+.cat-stage.is-dancing #cat-head {
+  transform-origin: 150px 185px;
+  animation: cat-head-bob 1.1s ease-in-out infinite;
+}
+
+.cat-stage.is-dancing #cat-tail {
+  transform-origin: 208px 208px;
+  animation: cat-tail-wag 0.7s ease-in-out infinite;
+}
+
+.cat-stage.is-dancing #cat-left-paw {
+  transform-origin: 118px 252px;
+  animation: cat-paw-tap 1.1s ease-in-out infinite;
+}
+
+.cat-stage.is-dancing #cat-right-paw {
+  transform-origin: 182px 252px;
+  animation: cat-paw-tap 1.1s ease-in-out infinite 0.35s;
+}
+
+.cat-stage .music-note {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #ff8a5b;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cat-stage.is-dancing .music-note {
+  animation: note-float 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-stage.is-dancing .cat-svg,
+  .cat-stage.is-dancing #cat-body,
+  .cat-stage.is-dancing #cat-head,
+  .cat-stage.is-dancing #cat-tail,
+  .cat-stage.is-dancing #cat-left-paw,
+  .cat-stage.is-dancing #cat-right-paw,
+  .cat-stage.is-dancing .music-note {
+    animation: none;
+  }
+}
